@@ -1,0 +1,29 @@
+<div class="bg-gray-400/60 backdrop-blur-sm rounded-md m-1">
+  <!-- Menu button -->
+  <div *ngIf="!isVisible">
+    <button (click)="SwitchShowing()" class="m-2 material-symbols-outlined">menu</button>
+  </div>
+  <!-- Main panel -->
+  <div *ngIf="isVisible" class="w-[400px] p-1">
+    <!-- Exit button -->
+    <div class="fixed top-0 right-0">
+      <button (click)="SwitchShowing()" class="material-symbols-outlined">close</button>
+    </div>
+    <!-- Title -->
+    <div class="text-center bg-white/50 m-5">
+      <h1 class="text-gray-900 text-lg">Существующие маршруты от станции {{ selectedStation?.title }}</h1>
+      <h1 class="text-gray-900 text-lg" [innerText]="selectedStation?.title"></h1>
+    </div>
+    <!-- Form fields -->
+    <div id="stationForm"
+      class="grid gap-2 my-5">
+      <input
+        class="mx-5 bg-white/50 rounded-md p-2 text-gray-900"
+        type="text"/>
+      <input
+        class="mx-5 bg-white/50 rounded-md p-2 text-gray-900"
+        type="text"/>
+    </div>
+    <button (click)="click()">Click</button>
+  </div>
+</div>
